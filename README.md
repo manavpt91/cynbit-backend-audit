@@ -17,6 +17,7 @@ cynbit-backend-audit/
 │   └── security-headers.ts
 └── evidence/
     ├── browser-network-summary.md
+    ├── document-response-headers.md
     ├── network-fetch-xhr.png
     └── passive-response-snapshot.md
 ```
@@ -27,9 +28,9 @@ The public site uses Next.js App Router and is served through Vercel. The suppli
 
 ## Scope and methodology
 
-The assessment used a small number of ordinary HTTPS page reads plus the user-provided Chrome DevTools Network screenshot. No form was submitted, no authentication or hidden paths were tested, and no fuzzing, load testing, or exploitation was performed. The screenshot does not show request methods, complete URLs for every row, headers, request/response bodies, cookie flags, or Lighthouse metrics; the report marks those as unknown instead of inferring them.
+The assessment used a small number of ordinary HTTPS page reads plus user-provided Chrome DevTools Network and Headers details. No form was submitted, no authentication or hidden paths were tested, and no fuzzing, load testing, or exploitation was performed. The Network screenshot does not show methods or request/response bodies; the report marks those as unknown instead of inferring them.
 
-Earlier page-response observations in `evidence/passive-response-snapshot.md` came from individual passive HTTPS GET requests, not from the screenshot. Keep those evidence sources distinct when presenting the report.
+Earlier page-response observations in `evidence/passive-response-snapshot.md` came from individual passive HTTPS GET requests, not from the screenshot. The user-supplied document headers are recorded separately in `evidence/document-response-headers.md`. Keep those evidence sources distinct when presenting the report.
 
 ## Recommendations
 
